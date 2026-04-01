@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero small-hero">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analyzer.html">Analyzer</a></li>
+        <li><a href="generator.html">Generator</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <h2>Password Generator</h2>
+      <p>I think we use this section to explain everthing and use the links to the generator and Analyzer </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section card">
+      <h2>Password Generator</h2>
+      <p>Create a secure password based on your chosen requirements.</p>
+
+      <div class="generator-options">
+        <label>
+          Length:
+          <input type="number" id="length" min="5" value="14" />
+        </label>
+
+        <label>
+          <input type="checkbox" id="uppercase" checked />
+          Include Uppercase Letters
+        </label>
+
+        <label>
+          <input type="checkbox" id="lowercase" checked />
+          Include Lowercase Letters
+        </label>
+
+        <label>
+          <input type="checkbox" id="numbers" checked />
+          Include Numbers
+        </label>
+
+        <label>
+          <input type="checkbox" id="symbols" checked />
+          Include Special Characters
+        </label>
+      </div>
+
+      <button onclick="generatePassword()">Generate Password</button>
+
+      <div class="generated-password">
+        <input
+          type="text"
+          id="generatedPassword"
+          readonly
+          placeholder="Generated password will appear here"
+        />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>CS 331 Project</p>
+    <p>Team: Mason Beckman, Youssef Ebed, Gavin Copple, Cameron Kadre, Grant Koupal, Jay Rudel</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero small-hero">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analyzer.html">Analyzer</a></li>
+        <li><a href="generator.html">Generator</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <h2>Password Strength Analyzer</h2>
+      <p>Test your password and get feedback.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section card">
+      <h2>Password Strength Analyzer</h2>
+      <p>Enter a password below to test its strength.</p>
+
+      <div class="input-group">
+        <input type="text" id="passwordInput" placeholder="Enter a password" />
+        <button onclick="testPassword()">Check Password</button>
+      </div>
+
+      <div class="strength-box">
+        <p><strong>Strength:</strong> <span id="strengthResult">Not checked yet</span></p>
+        <p id="feedbackText"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>CS 331 Project</p>
+    <p>Team: Mason Beckman, Youssef Ebed, Gavin Copple, Cameron Kadre, Grant Koupal, Jay Rudel</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
