@@ -18,3 +18,18 @@ footer {
   color: white;
   margin-top: 40px;
 }
+
+.generator{
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border: #0f172a solid 1px;
+  /* margin: 75px; */
+  width: fit-content;
+  /*Potentially put it in the middle*/
+}
+
+.InputBox{
+  width: 35px;
+}

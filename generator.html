@@ -23,7 +23,7 @@
   </header>
 
   <main>
-    <section class="section card">
+    <section class="generator">
       <h2>Password Generator</h2>
       <p>Create a secure password based on your chosen requirements.</p>
 
@@ -31,28 +31,40 @@
         <label>
           Length:
           <input type="number" id="length" min="5" value="14" />
-        </label>
+        </label><br/>
 
         <label>
           <input type="checkbox" id="uppercase" checked />
           Include Uppercase Letters
-        </label>
+        </label><br/>
 
         <label>
           <input type="checkbox" id="lowercase" checked />
           Include Lowercase Letters
-        </label>
+        </label><br/>
 
         <label>
           <input type="checkbox" id="numbers" checked />
           Include Numbers
-        </label>
+        </label><br/>
 
         <label>
           <input type="checkbox" id="symbols" checked />
           Include Special Characters
-        </label>
+        </label><br/>
+
+        <label>
+          At least:
+          <input type="number" id="numberOfSpecial" min="0" value="2" class="InputBox"/> special characters
+        </label><br/>
+
+        <label>
+          <input type="checkbox" id="repeatable" checked/>
+          Repeatable Characters
+        </label><br/>
       </div>
+
+      <br/>
 
       <button onclick="generatePassword()">Generate Password</button>
 
@@ -62,6 +74,7 @@
           id="generatedPassword"
           readonly
           placeholder="Generated password will appear here"
+          editable="false"
         />
       </div>
     </section>
@@ -73,5 +86,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="generator.js"></script>
 </body>
 </html>
