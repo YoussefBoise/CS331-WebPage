@@ -50,7 +50,7 @@ function checkPasswordStrength(password) {
 function testPassword() {
   const password = document.getElementById("passwordInput").value;
   const result = checkPasswordStrength(password);
-  document.getElementById("result").textContent = result;
+  document.getElementById("strengthResult").textContent = result;
 }
 
 loadCommonPasswords();
