@@ -13,10 +13,14 @@
 
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 20px; 
   background: #0f172a;
   color: white;
-  margin-top: 40px;
+   margin-top: 40px; 
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
 }
 
 .generator{
@@ -28,8 +32,31 @@ footer {
   /* margin: 75px; */
   width: fit-content;
   /*Potentially put it in the middle*/
+  background-color:aliceblue;
 }
 
 .InputBox{
   width: 35px;
+}
+
+.features{
+  border:#0f172a solid 1px;
+  width:fit-content;
+  padding:10px;
+  background-color:aliceblue;
+}
+
+.navbar{
+  padding:0px;
+}
+
+.navbar li{
+  list-style-type:square;
+}
+
+.section-card{
+  border:#0f172a solid 1px;
+  width:fit-content;
+  padding:10px;
+  background-color:aliceblue;
 }
