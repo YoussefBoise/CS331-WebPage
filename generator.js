@@ -56,8 +56,14 @@ async function generatePassword() {
     let availableAll = allChars.slice();
     let availableSpecial = specialSet.slice();
 
+    function getRandomIndex(max) {
+        const array = new Uint32Array(1);
+        crypto.getRandomValues(array);
+        return array[0] % max;
+    }
+
     function takeRandomChar(sourceArray) {
-        const index = Math.floor(Math.random() * sourceArray.length);
+        const index = getRandomIndex(sourceArray.length);
         const char = sourceArray[index];
         if (!repeatable) {
             sourceArray.splice(index, 1);
@@ -90,7 +96,7 @@ async function generatePassword() {
     }
 
     for (let i = passwordChars.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+        const j = getRandomIndex(i + 1);
         const temp = passwordChars[i];
         passwordChars[i] = passwordChars[j];
         passwordChars[j] = temp;
