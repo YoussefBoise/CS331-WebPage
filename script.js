@@ -30,7 +30,7 @@ function checkPasswordStrength(password) {
 
   let score = 0;
 
-  if (trimmedPassword.length >= 8) score++;
+  score += (trimmedPassword.length - 8) / 1.7;
   if (/[A-Z]/.test(trimmedPassword)) score++;
   if (/[a-z]/.test(trimmedPassword)) score++;
   if (/[0-9]/.test(trimmedPassword)) score++;
@@ -38,9 +38,9 @@ function checkPasswordStrength(password) {
 
   if (trimmedPassword.length < 8) {
     return "Weak: Password is too short.";
-  } else if (score <= 2) {
+  } else if (score <= 3) {
     return "Weak";
-  } else if (score <= 4) {
+  } else if (score <= 6) {
     return "Moderate";
   } else {
     return "Strong";
