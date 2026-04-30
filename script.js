@@ -24,13 +24,21 @@ function checkPasswordStrength(password) {
     return "Please enter a password.";
   }
 
-  if (commonPasswords.has(lowerPassword)) {
-    return "Not Strong: This password is too common.";
-  }
-
   let score = 0;
 
-  score += (trimmedPassword.length - 8) / 1.7;
+  let penalty = 1;
+
+  for (const common of commonPasswords) {
+    if (lowerPassword.includes(common)) {
+      score -= penalty;
+      penalty -= .1;
+      if(penalty <= 0) {
+        break;
+      }
+    }
+  }
+
+  score += (trimmedPassword.length - 8) / 2.3;
   if (/[A-Z]/.test(trimmedPassword)) score++;
   if (/[a-z]/.test(trimmedPassword)) score++;
   if (/[0-9]/.test(trimmedPassword)) score++;
@@ -38,7 +46,7 @@ function checkPasswordStrength(password) {
 
   if (trimmedPassword.length < 8) {
     return "Weak: Password is too short.";
-  } else if (score <= 3) {
+  } else if (score <= 4) {
     return "Weak";
   } else if (score <= 6) {
     return "Moderate";
