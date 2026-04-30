@@ -26,7 +26,7 @@ function checkPasswordStrength(password) {
 
   let score = 0;
 
-  let penalty = 1;
+  let penalty = 2;
 
   if(commonPasswords.has(lowerPassword)) {
     return "Weak: Password is a common password.";
@@ -35,10 +35,7 @@ function checkPasswordStrength(password) {
   for (const common of commonPasswords) {
     if (lowerPassword.includes(common)) {
       score -= penalty;
-      penalty -= .1;
-      if(penalty <= 0) {
-        break;
-      }
+      break;
     }
   }
 
