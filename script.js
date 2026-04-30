@@ -39,10 +39,10 @@ function checkPasswordStrength(password) {
   }
 
   score += (trimmedPassword.length - 8) / 2.3;
-  if (/[A-Z]/.test(trimmedPassword)) score++;
-  if (/[a-z]/.test(trimmedPassword)) score++;
-  if (/[0-9]/.test(trimmedPassword)) score++;
-  if (/[^A-Za-z0-9]/.test(trimmedPassword)) score++;
+  if (/[A-Z]/.test(trimmedPassword)) score += 1.25;
+  if (/[a-z]/.test(trimmedPassword)) score += 1.25;
+  if (/[0-9]/.test(trimmedPassword)) score += 1.25;
+  if (/[^A-Za-z0-9]/.test(trimmedPassword)) score += 1.25;
 
   if (trimmedPassword.length < 8) {
     return "Weak: Password is too short.";
