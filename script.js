@@ -24,6 +24,16 @@ function checkPasswordStrength(password) {
     return "Please enter a password.";
   }
 
+  if (/^(.)\1+$/.test(trimmedPassword)) {
+    return "Weak: Password is repeated characters.";
+  }
+
+  const uniqueChars = new Set(trimmedPassword).size;
+
+  if (uniqueChars <= 6 && trimmedPassword.length >= 8) {
+    return "Weak: Password uses too few unique characters.";
+  }
+
   let score = 0;
 
   let penalty = 2;
